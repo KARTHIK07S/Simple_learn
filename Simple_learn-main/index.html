@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyLearn Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">EasyLearn</h1>
+            <nav class="nav-menu">
+                <a href="#" onclick="showSection('home')" class="nav-link active">Home</a>
+                <a href="#" onclick="showSection('courses')" class="nav-link">Courses</a>
+                <a href="#" onclick="showSection('register')" class="nav-link">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Welcome to EasyLearn</h2>
+                <p>Discover thousands of courses and start learning today!</p>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for courses..." class="search-input">
+                    <button onclick="searchCourses()" class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Courses Preview -->
+        <div class="container">
+            <h3>Popular Categories</h3>
+            <div class="category-grid">
+                <div class="category-card" onclick="showSection('courses')">
+                    <h4>Programming</h4>
+                    <p>Learn coding skills</p>
+                </div>
+                <div class="category-card" onclick="showSection('courses')">
+                    <h4>Design</h4>
+                    <p>Creative design courses</p>
+                </div>
+                <div class="category-card" onclick="showSection('courses')">
+                    <h4>Business</h4>
+                    <p>Business and marketing</p>
+                </div>
+                <div class="category-card" onclick="showSection('courses')">
+                    <h4>Languages</h4>
+                    <p>Learn new languages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2>All Courses</h2>
+            
+            <!-- Course Categories -->
+            <div class="course-sections">
+                <!-- Programming Section -->
+                <div class="course-category">
+                    <h3 class="category-title">Programming</h3>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <h4>JavaScript Basics</h4>
+                            <p>Learn the fundamentals of JavaScript programming</p>
+                            <span class="course-duration">4 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Python for Beginners</h4>
+                            <p>Start your Python programming journey</p>
+                            <span class="course-duration">6 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Web Development</h4>
+                            <p>Build modern websites with HTML, CSS, JS</p>
+                            <span class="course-duration">8 weeks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Section -->
+                <div class="course-category">
+                    <h3 class="category-title">Design</h3>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <h4>Graphic Design</h4>
+                            <p>Master the art of visual communication</p>
+                            <span class="course-duration">5 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>UI/UX Design</h4>
+                            <p>Design user-friendly interfaces</p>
+                            <span class="course-duration">7 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Photography</h4>
+                            <p>Learn professional photography techniques</p>
+                            <span class="course-duration">4 weeks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Section -->
+                <div class="course-category">
+                    <h3 class="category-title">Business</h3>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <h4>Digital Marketing</h4>
+                            <p>Master online marketing strategies</p>
+                            <span class="course-duration">6 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Project Management</h4>
+                            <p>Learn to manage projects effectively</p>
+                            <span class="course-duration">5 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Finance Basics</h4>
+                            <p>Understanding business finance</p>
+                            <span class="course-duration">4 weeks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="course-category">
+                    <h3 class="category-title">Languages</h3>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <h4>English Speaking</h4>
+                            <p>Improve your English communication</p>
+                            <span class="course-duration">8 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>Spanish for Beginners</h4>
+                            <p>Start learning Spanish today</p>
+                            <span class="course-duration">10 weeks</span>
+                        </div>
+                        <div class="course-card">
+                            <h4>French Basics</h4>
+                            <p>Learn fundamental French skills</p>
+                            <span class="course-duration">8 weeks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="section">
+        <div class="container">
+            <div class="register-container">
+                <h2>Register for EasyLearn</h2>
+                <p>Join thousands of learners and start your journey today!</p>
+                
+                <form id="registrationForm" class="register-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Interested in:</label>
+                        <select id="interests" name="interests" required>
+                            <option value="">Select your interest</option>
+                            <option value="programming">Programming</option>
+                            <option value="design">Design</option>
+                            <option value="business">Business</option>
+                            <option value="languages">Languages</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="register-btn">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message Section -->
+    <section id="success" class="section">
+        <div class="container">
+            <div class="success-container">
+                <div class="success-icon">✓</div>
+                <h2>Registration Successful!</h2>
+                <p>Welcome to EasyLearn! Your account has been created successfully.</p>
+                <p>You can now start exploring our courses and begin your learning journey.</p>
+                <button onclick="showSection('courses')" class="start-learning-btn">Start Learning</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section id="searchResults" class="section">
+        <div class="container">
+            <h2>Search Results</h2>
+            <div id="searchResultsContainer">
+                <!-- Search results will be displayed here -->
+            </div>
+            <button onclick="showSection('home')" class="back-btn">Back to Home</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
